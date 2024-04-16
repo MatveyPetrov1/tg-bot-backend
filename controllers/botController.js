@@ -83,7 +83,7 @@ const postBuy = async (req, res) => {
     await bot.sendMessage(chatId, infoText(req));
     req.body.items.forEach((obj) => bot.sendMessage(chatId, itemsText(obj)));
 
-    res.status(200).json({
+    return res.status(200).json({
       message: "success",
     });
   } catch (err) {
