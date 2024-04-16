@@ -11,6 +11,7 @@ const {
 dotenv.config();
 
 const token = process.env.TOKEN;
+const chatID = process.env.CHAT_ID;
 
 const bot = new Telegram(token, { polling: true });
 
@@ -77,7 +78,7 @@ const postBuy = async (req, res) => {
     if (!result.isEmpty()) {
       return res.json(result.array());
     }
-    const chatId = process.env.CHAT_ID;
+    const chatId = chatID;
 
     await bot.sendMessage(chatId, `---Новый заказ---`);
     await bot.sendMessage(chatId, infoText(req));
