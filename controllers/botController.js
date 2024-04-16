@@ -82,7 +82,9 @@ const postBuy = async (req, res) => {
 
     await bot.sendMessage(chatId, `---Новый заказ---`);
     await bot.sendMessage(chatId, infoText(req));
-    req.body.items.forEach((obj) => bot.sendMessage(chatId, itemsText(obj)));
+    await req.body.items.forEach((obj) =>
+      bot.sendMessage(chatId, itemsText(obj))
+    );
 
     return res.status(200).json({
       message: "success",

@@ -4,8 +4,9 @@ const { onSendMessage, postBuy } = require("./controllers/botController.js");
 const buyValidation = require("./validations/index.js");
 
 const app = express();
-app.use(cors());
+
 app.use(express.json());
+app.use(cors());
 
 const PORT = 4444 || process.env.PORT;
 
