@@ -55,7 +55,6 @@ const onSendMessage = () => {
     try {
       const text = msg.text;
       const chatId = msg.from.id;
-      console.log(chatId);
 
       if (text === "/start") {
         await bot.sendMessage(chatId, "Секундочку... 🕓");
