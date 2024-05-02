@@ -56,6 +56,8 @@ const onSendMessage = () => {
       const text = msg.text;
       const chatId = msg.from.id;
 
+      console.log(chatId);
+
       if (text === "/start") {
         await bot.sendMessage(chatId, "Секундочку... 🕓");
         return bot.sendVideo(chatId, "./assets/video.mp4", {
@@ -73,7 +75,6 @@ const onSendMessage = () => {
 
 const postBuy = async (req, res) => {
   try {
-    console.log("yes");
     const result = validationResult(req);
     if (!result.isEmpty()) {
       return res.json(result.array());
