@@ -56,8 +56,6 @@ const onSendMessage = () => {
       const text = msg.text;
       const chatId = msg.from.id;
 
-      console.log(chatId);
-
       if (text === "/start") {
         await bot.sendMessage(chatId, "Секундочку... 🕓");
         return bot.sendVideo(chatId, "./assets/video.mp4", {
