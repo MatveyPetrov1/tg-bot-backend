@@ -73,12 +73,13 @@ const onSendMessage = () => {
 
 const postBuy = async (req, res) => {
   try {
-    console.log("yes");
     const result = validationResult(req);
     if (!result.isEmpty()) {
       return res.json(result.array());
     }
     const chatId = chatID;
+
+    console.log(req.body.userName);
 
     await bot.sendMessage(chatId, `---Новый заказ---`);
     await bot.sendMessage(chatId, infoText(req));

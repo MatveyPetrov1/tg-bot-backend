@@ -14,6 +14,7 @@ const startText = (first_name, last_name) => {
 
 const infoText = (req) => {
   return `${req.body.name ? "Имя: " + req.body.name : ""}
+${req.body.userName ? "Имя в Telegram: " + req.body.userName : ""}
 Телефон: ${req.body.number}
 Время: ${req.body.time}
 Адрес: ${req.body.street}
